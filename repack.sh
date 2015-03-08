@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KERNEL_NAME=Hybridmax_Kernel-v1-TWLP_I9505
+KERNEL_NAME=Hybridmax_Kernel-v2-TWLP_I9505
 KERNEL_DIR=/home/hybridmax/android/kernel/s4/s4tw
 REPACK_DIR=build_image/tw-5.0
 BUILD=build_image
