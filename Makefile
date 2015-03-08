@@ -379,10 +379,13 @@ KBUILD_CPPFLAGS := -D__KERNEL__
 KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
 		   -Werror-implicit-function-declaration \
-		   -Wno-format-security \
-		   -Wno-sizeof-pointer-memaccess \
-		   -Wno-aggressive-loop-optimizations \
-		   -fno-delete-null-pointer-checks
+		   -Wno-format-security -Wno-unused-variable -Wno-unused-function -Wno-array-bounds \
+		   -fno-delete-null-pointer-checks \
+		   -Wno-cpp -Wno-declaration-after-statement -fno-var-tracking-assignments \
+		   -Wno-sizeof-pointer-memaccess -Wno-aggressive-loop-optimizations -Wno-sequence-point -Wno-maybe-uninitialized \
+		   -mtune=cortex-a15 -mcpu=cortex-a15 -mfpu=neon-vfpv4 \
+		   -ffast-math -fmodulo-sched -fmodulo-sched-allow-regmoves \
+		   -funsafe-loop-optimizations -funsafe-math-optimizations
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
