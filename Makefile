@@ -385,7 +385,8 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Wno-sizeof-pointer-memaccess -Wno-aggressive-loop-optimizations -Wno-sequence-point -Wno-maybe-uninitialized \
 		   -mtune=cortex-a15 -mcpu=cortex-a15 -mfpu=neon-vfpv4 \
 		   -ffast-math -fmodulo-sched -fmodulo-sched-allow-regmoves \
-		   -funsafe-loop-optimizations -funsafe-math-optimizations
+		   -funsafe-loop-optimizations -funsafe-math-optimizations \
+                   -std=gnu89
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
