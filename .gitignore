@@ -180,8 +180,6 @@ GTAGS
 /build/tw*/*lzo
 /build/tw*/*lz4
 /build/tw*/*lzma
-/build/zip_files/META-INF/com/google/android/*
-/build/zip_files/system/*/*
 /build/zip_files/boot.img
 /build/output_kernel/Hybridmax*
 /build/output_kernel/Hybridmax*.zip
@@ -204,8 +202,6 @@ GTAGS
 /build_image/tw*/*lzo
 /build_image/tw*/*lz4
 /build_image/tw*/*lzma
-/build_image/zip_files/META-INF/com/google/android/*
-/build_image/zip_files/system/*/*
 /build_image/zip_files/boot.img
 /build_image/output_kernel/Hybridmax*
 /build_image/output_kernel/Hybridmax*.zip
