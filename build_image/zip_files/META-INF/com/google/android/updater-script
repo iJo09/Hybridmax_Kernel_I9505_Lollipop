@@ -3,11 +3,117 @@ ui_print("Hybridmax-Kernel-Lollipop");
 ui_print("Device: GalaxyS4 [I9505] ");
 ui_print("*************************");
 ui_print("");
-ui_print("Mounting System");
+ui_print("Mounting Partitions");
 ui_print("");
-run_program("/sbin/busybox", "mount", "/system");
+mount("ext4", "EMMC", "/dev/block/mmcblk0p16", "/system");
+mount("ext4", "EMMC", "/dev/block/mmcblk0p18", "/cache");
+mount("ext4", "EMMC", "/dev/block/mmcblk0p29", "/data");
+mount("ext4", "EMMC", "/dev/block/mmcblk1p1", "/sdcard");
+ui_print("Cleaning old Files");
+ui_print("");
+
+# Adam Kernel
+delete_recursive("/data/.adamkernel");
+
+# AEL Kernel
+delete_recursive("/data/.ael");
+
+# Alucard kernel
+delete_recursive("/alucard_plug");
+delete_recursive("/data/.alucard");
+delete_recursive("/system/wget");
+
+# Ausdim Kernel
+delete_recursive("/data/.ausdim-kernel");
+delete_recursive("/sdcard/ausdim-kernel-data");
+delete_recursive("/mnt/sdcard/ausdim-kernel-data");
+delete_recursive("/storage/sdcard0/ausdim-kernel-data");
+delete_recursive("/data/media/0/ausdim-kernel-data");
+
+# Ghost Kernel
+delete_recursive("/data/.ghost");
+
+# Googy Max 3 kernel
+delete_recursive("/data/.googymax3");
+
+# Hybridmax Kernel
+delete_recursive("/data/.hybridmax");
+delete_recursive("/sdcard/hybridmax-kernel-data");
+delete_recursive("/mnt/sdcard/hybridmax-kernel-data");
+delete_recursive("/storage/sdcard0/hybridmax-kernel-data");
+delete_recursive("/data/media/0/hybridmax-kernel-data");
+
+# Imperium kernel
+delete_recursive("/data/.imperium");
+
+# KT Kernel
+delete_recursive("/sdcard/KTweaker");
+delete("/system/app/com.ktoonsez.KTweaker.apk");
+delete("/system/app/com.ktoonsez.KTmonitor.apk");
+delete("/data/dalvik-cache/system@app@com.ktoonsez.KTweaker.apk@classes.dex");
+delete("/data/dalvik-cache/system@app@com.ktoonsez.KTmonitor.apk@classes.dex");
+delete_recursive("/data/data/com.ktoonsez.KTmonitor");
+delete_recursive("/data/data/com.ktoonsez.KTweaker");
+
+# STweaks
+delete("/data/app/com.gokhanmoral.stweaks.app-1.apk");
+delete("/system/app/STweaks.apk");
+delete("/system/app/STweaks_Googy-Max.apk");
+delete("/system/app/GTweaks.apk");
+delete("/system/app/HybridTweaks.apk");
+delete("/data/dalvik-cache/system@app@STweaks.apk@classes.dex");
+delete("/data/dalvik-cache/system@app@STweaks_Googy-Max.apk@classes.dex");
+delete("/data/dalvik-cache/system@app@GTweaks.apk@classes.dex");
+delete("/data/dalvik-cache/system@app@HybridTweaks.apk@classes.dex");
+delete_recursive("/data/data/com.gokhanmoral.stweaks.app");
+delete_recursive("/data/data/com.gokhanmoral.stweaks_ghost.app");
+
+# Synapse app
+delete_recursive("/sdcard/Synapse");
+delete_recursive("/mnt/sdcard/Synapse");
+delete_recursive("/storage/sdcard0/Synapse");
+delete_recursive("/data/media/0/Synapse");
+delete_recursive("/data/.Synapse");
+delete_recursive("/data/data/com.af.synapse");
+delete("/system/app/Synapse.apk");
+delete("/data/app/Synapse.apk");
+delete("/data/app/com.af.synapse-1.apk");
+delete("/data/app/com.af.synapse-2.apk");
+delete("/data/app/com.af.synapse-3.apk");
+delete("/data/app/com.af.synapse-4.apk");
+delete("/data/app/com.af.synapse-5.apk");
+delete_recursive("/data/app-lib/com.af.synapse-1");
+delete_recursive("/data/app-lib/com.af.synapse-2");
+delete_recursive("/data/app-lib/com.af.synapse-3");
+delete_recursive("/data/app-lib/com.af.synapse-4");
+delete_recursive("/data/app-lib/com.af.synapse-5");
+delete("/data/dalvik-cache/system@app@Synapse.apk@classes.dex");
+delete("/data/dalvik-cache/data@app@Synapse.apk@classes.dex");
+delete("/data/dalvik-cache/data@app@com.af.synapse-1.apk@classes.dex");
+delete("/data/dalvik-cache/data@app@com.af.synapse-2.apk@classes.dex");
+delete("/data/dalvik-cache/data@app@com.af.synapse-3.apk@classes.dex");
+delete("/data/dalvik-cache/data@app@com.af.synapse-4.apk@classes.dex");
+delete("/data/dalvik-cache/data@app@com.af.synapse-5.apk@classes.dex");
+
+# KNOX
+delete("/system/app/KNOXAgent.apk");
+delete("/system/app/KNOXAgent.odex");
+delete("/system/app/KnoxAttestationAgent.apk");
+delete("/system/app/KnoxAttestationAgent.odex");
+delete("/system/app/KNOXStore.apk");
+delete("/system/app/KNOXStore.odex");
+delete("/system/app/KNOXStub.apk");
+delete("/system/app/KNOXStub.odex");
+delete("/system/app/ContainerAgent.apk");
+delete("/system/app/ContainerAgent.odex");
+delete("/system/app/ContainerEventsRelayManager.apk");
+delete("/system/app/ContainerEventsRelayManager.odex");
+delete("/system/priv-app/KLMSAgent.apk");
+delete("/system/priv-app/KLMSAgent.odex");
+run_program("/sbin/rm", "-rf", "/system/containers");
 delete_recursive("/system/lib/modules");
 run_program("/sbin/rm", "-rf", "/system/lib/modules");
+
 ui_print("Extracting System Files");
 ui_print("");
 package_extract_dir("system", "/system");
