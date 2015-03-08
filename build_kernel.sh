@@ -24,7 +24,7 @@ BUILD_CROSS_COMPILE=$TOOLCHAIN_DIR/linaro_4.9_arm-cortex-a15/bin/arm-cortex_a15-
 
 BUILD_JOB_NUMBER=`grep processor /proc/cpuinfo|wc -l`
 KERNEL_DEFCONFIG=jf_defconfig
-USER_DEFCONFIG=hybridmax_jf_defconfig
+USER_DEFCONFIG=0hybridmax_jf_defconfig
 VARIANT_DEFCONFIG=jf_eur_defconfig
 SELINUX_DEFCONFIG=selinux_defconfig
 
