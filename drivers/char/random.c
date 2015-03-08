@@ -281,7 +281,7 @@ static int random_read_wakeup_thresh = 64;
  * access to /dev/random.
  */
 #ifdef CONFIG_CRYPTO_FIPS
-static int random_write_wakeup_thresh = 320;
+static int random_write_wakeup_thresh = 512;
 #else
 static int random_write_wakeup_thresh = 128;
 #endif
